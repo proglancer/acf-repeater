@@ -1,0 +1,25 @@
+<div id="main-block">
+
+<?php
+	$counter = 0;
+	if( have_rows('repeater') ): 
+	while ( have_rows('repeater') ) : the_row(); 
+?>
+<section>
+	<?php if ($counter % 2 === 0) :?>
+		<div class="first-row">
+			<?php the_sub_field('content'); ?>
+		</div>
+	<?php else: ?>
+		<div class="second-row">
+			<?php the_sub_field('content'); ?>
+		</div>
+	<?php endif; ?>
+</section>
+<?php 
+	$counter++; 
+	endwhile; 
+	endif; 
+?>
+
+</div><!-- main-block -->
